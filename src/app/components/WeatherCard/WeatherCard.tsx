@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Cloud, Sun, CloudRain, Wind, Droplets, ThermometerSun } from 'lucide-react';
+import {  Sun, CloudRain, Wind, Droplets } from 'lucide-react';
 
 interface WeatherCardProps {
   location?: string;
