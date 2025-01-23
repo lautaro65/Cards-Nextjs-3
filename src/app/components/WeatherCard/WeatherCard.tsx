@@ -22,7 +22,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
 
   return (
     <motion.div
-      className="w-80 h-[420px] rounded-3xl overflow-hidden shadow-lg relative cursor-pointer bg-white/5 backdrop-blur-sm"
+      className="w-56 h-[310px] rounded-3xl overflow-hidden shadow-lg relative cursor-pointer bg-white/5 backdrop-blur-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -47,7 +47,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           [...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-40 h-1 bg-yellow-200/30"
+              className="absolute w-16 h-1 bg-yellow-200/30"
               style={{
                 top: '30%',
                 left: '50%',
@@ -103,7 +103,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <Sun className="w-24 h-24 text-yellow-500" />
+                <Sun className="w-16 h-16 text-yellow-500" />
                 <motion.div
                   className="absolute inset-0"
                   animate={{ rotate: 360 }}
@@ -135,15 +135,15 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         </div>
 
         {/* Location and Date */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-2">
           <h2 className="text-gray-700 font-medium text-xl mb-1">{location}</h2>
           <p className="text-gray-500 text-sm">{country} • {currentDate}</p>
         </div>
 
         {/* Temperature Display */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-2">
           <motion.div 
-            className="text-7xl font-light text-gray-800 mb-2"
+            className="text-2xl font-bold text-gray-800 mb-2"
             key={isSunny ? "sunny" : "rainy"}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -161,8 +161,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           <div className="flex items-center gap-2 bg-white/20 rounded-xl p-3">
             <Wind className="w-5 h-5 text-gray-600" />
             <div>
-              <p className="text-xs text-gray-500">Viento</p>
-              <p className="text-sm font-medium text-gray-700">
+              <p className="text-xs font-medium text-gray-700">
                 {isSunny ? "12 km/h" : "24 km/h"}
               </p>
             </div>
@@ -170,7 +169,6 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           <div className="flex items-center gap-2 bg-white/20 rounded-xl p-3">
             <Droplets className="w-5 h-5 text-gray-600" />
             <div>
-              <p className="text-xs text-gray-500">Humedad</p>
               <p className="text-sm font-medium text-gray-700">
                 {isSunny ? "45%" : "82%"}
               </p>
